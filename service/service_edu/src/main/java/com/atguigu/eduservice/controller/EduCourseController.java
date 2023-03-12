@@ -46,7 +46,8 @@ public class EduCourseController {
         return R.ok();
     }
     //根据课程id查询课程确认信息
-    @GetMapping("getPublishCourseInfo/{courseId}")
+//    @GetMapping("getPublishCourseInfo/{courseId}")
+    @GetMapping("getPublishCourseInfo/{id}")
     public R getPublishCourseInfo(@PathVariable String id){
         CoursePublishVo coursePublishVo = eduCourseService.publishCourseInfo(id);
 
