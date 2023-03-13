@@ -2,6 +2,7 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.entity.EduCourse;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
 import com.atguigu.eduservice.entity.vo.CoursePublishVo;
 import com.atguigu.eduservice.service.EduCourseService;
@@ -54,6 +55,16 @@ public class EduCourseController {
         return R.ok().data("publishCourse",coursePublishVo);
     }
 
+    //课程最终发布
+    //修改课程状态
+    @PostMapping("publishCourse/{id}")
+    public R publishCourse(@PathVariable String id){
+        EduCourse course = new EduCourse();
+        course.setId(id);
+        course.setStatus("Normal");
+        eduCourseService.updateById(course);
+        return R.ok();
+    }
 
 }
 
