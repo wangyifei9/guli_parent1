@@ -6,8 +6,12 @@ import com.atguigu.eduservice.entity.EduCourse;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
 import com.atguigu.eduservice.entity.vo.CoursePublishVo;
 import com.atguigu.eduservice.service.EduCourseService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
  * @author testjava
  * @since 2020-03-02
  */
+@Api(description="课程管理")
 @RestController
 @RequestMapping("/eduservice/course")
 @CrossOrigin
@@ -24,6 +29,29 @@ public class EduCourseController {
 
     @Autowired
     private EduCourseService eduCourseService;
+
+
+    @GetMapping
+    public R getCourseList() {
+        List<EduCourse> list = eduCourseService.list(null);
+        return R.ok().data("list",list);
+
+    }
+    //TODO :3 分页查询课程的方法
+    @PostMapping("getCourseList/{current}/{limit}")
+    public R getCourseList(@PathVariable long current,
+                           @PathVariable long limit) {
+
+        Page<EduCourse> pageCourse = new Page<>(current,limit);
+        eduCourseService.page(pageCourse,null);
+        long total = pageCourse.getTotal();//总记录数
+        List<EduCourse> records = pageCourse.getRecords(); //数据list集合
+
+//        List<EduCourse> list = eduCourseService.list(null);
+//        return R.ok().data("list",records);
+        return R.ok().data("total",total).data("rows",records);
+    }
+
 
     //添加课程基本信息的方法
     @PostMapping("addCourseInfo")

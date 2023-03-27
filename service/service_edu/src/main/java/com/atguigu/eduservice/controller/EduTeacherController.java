@@ -2,11 +2,9 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
-import com.atguigu.commonutils.servicebase.exception.GuliException;
 import com.atguigu.eduservice.entity.EduTeacher;
 import com.atguigu.eduservice.entity.vo.TeacherQuery;
 import com.atguigu.eduservice.service.EduTeacherService;
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -36,7 +34,6 @@ public class EduTeacherController {
     //把service注入
     @Autowired
     private EduTeacherService teacherService;
-
     //1 查询讲师表所有数据
     //rest风格
     @ApiOperation(value = "所有讲师列表")
@@ -69,12 +66,12 @@ public class EduTeacherController {
         //创建page对象
         Page<EduTeacher> pageTeacher = new Page<>(current,limit);
 
-        try {
-            int i = 10/0;
-        }catch(Exception e) {
-            //执行自定义异常
-            throw new GuliException(20001,"执行了自定义异常处理....");
-        }
+//        try {
+//            int i = 10/0;
+//        }catch(Exception e) {
+//            //执行自定义异常
+//            throw new GuliException(20001,"执行了自定义异常处理....");
+//        }
 
 
         //调用方法实现分页
