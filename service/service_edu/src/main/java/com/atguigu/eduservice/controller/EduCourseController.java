@@ -11,7 +11,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -88,18 +87,18 @@ public class EduCourseController {
         List<EduCourse> records = pageCourse.getRecords(); //数据list集合
         return R.ok().data("total",total).data("rows",records);
     }
-    // 逻辑删除课程的方法
-    @ApiOperation(value = "逻辑删除课程")
-    @DeleteMapping("{id}")
-    public R removeTeacher(@ApiParam(name = "id", value = "课程ID", required = true)
-                           @PathVariable String id) {
-        boolean flag = eduCourseService.removeById(id);
-        if(flag) {
-            return R.ok();
-        } else {
-            return R.error();
-        }
-    }
+//    // 逻辑删除课程的方法
+//    @ApiOperation(value = "逻辑删除课程")
+//    @DeleteMapping("{id}")
+//    public R removeTeacher(@ApiParam(name = "id", value = "课程ID", required = true)
+//                           @PathVariable String id) {
+//        boolean flag = eduCourseService.removeById(id);
+//        if(flag) {
+//            return R.ok();
+//        } else {
+//            return R.error();
+//        }
+//    }
     // 删除课程的方法
     @ApiOperation(value = "删除课程")
     @DeleteMapping("{courseId}")
