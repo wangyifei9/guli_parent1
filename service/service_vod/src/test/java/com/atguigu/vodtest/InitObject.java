@@ -1,4 +1,4 @@
-package com.atgugi.vodtest;
+package com.atguigu.vodtest;
 
 import com.aliyun.oss.ClientException;
 import com.aliyuncs.DefaultAcsClient;
