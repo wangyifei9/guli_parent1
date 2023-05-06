@@ -12,9 +12,9 @@
     <artifactId>service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>service_eduu</module>
-        <module>service-oss</module>
+        <module>service_edu</module>
         <module>service_oss</module>
+        <module>service_vod</module>
     </modules>
     <dependencies>
         <dependency>
@@ -113,9 +113,6 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+
 
 </project>
