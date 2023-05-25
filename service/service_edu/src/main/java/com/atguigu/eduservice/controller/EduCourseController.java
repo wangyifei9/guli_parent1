@@ -110,9 +110,10 @@ public class EduCourseController {
     //添加课程基本信息的方法
     @PostMapping("addCourseInfo")
     public R addCourseInfo(@RequestBody CourseInfoVo courseInfoVo){
-        eduCourseService.saveCourseInfo(courseInfoVo);
 
-        return R.ok();
+        String id = eduCourseService.saveCourseInfo(courseInfoVo);
+
+        return R.ok().data("courseId",id);
     }
     //根据课程id查询课程基本信息
     @GetMapping("getCourseInfo/{courseId}")
