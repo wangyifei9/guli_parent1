@@ -2,6 +2,7 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.commonutils.servicebase.exception.GuliException;
 import com.atguigu.eduservice.client.VodClient;
 import com.atguigu.eduservice.entity.EduVideo;
 import com.atguigu.eduservice.service.EduVideoService;
@@ -43,7 +44,10 @@ public class EduVideoController {
         //判断小节里是否有视频id
         if(!StringUtils.isEmpty(videoSourceId)){
             //根据视频id,远程调用实现视频删除
-            vodClient.removeAlyVideo(videoSourceId);
+            R result = vodClient.removeAlyVideo(videoSourceId);
+            if(result.getCode() == 20001){
+                throw new GuliException(20001,"删除视频失败，熔断器。。。");
+            }
         }
         eduVideoService.removeById(id);
         return R.ok();
