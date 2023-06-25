@@ -2,14 +2,11 @@ package com.atguigu.eduservice.listener;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
-import com.atguigu.commonutils.servicebase.exception.GuliException;
 import com.atguigu.eduservice.entity.EduSubject;
 import com.atguigu.eduservice.entity.excel.SubjectData;
-import com.atguigu.eduservice.mapper.EduSubjectMapper;
 import com.atguigu.eduservice.service.EduSubjectService;
-
+import com.atguigu.servicebase.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class SubjectExcelListener extends AnalysisEventListener<SubjectData> {
 

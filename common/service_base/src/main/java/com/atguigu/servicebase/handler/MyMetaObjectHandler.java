@@ -1,4 +1,4 @@
-package com.atguigu.commonutils.servicebase.handler;
+package com.atguigu.servicebase.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
-        //属性名，不是数据库字段名
+        //属性名称，不是字段名称
         this.setFieldValByName("gmtCreate", new Date(), metaObject);
         this.setFieldValByName("gmtModified", new Date(), metaObject);
     }

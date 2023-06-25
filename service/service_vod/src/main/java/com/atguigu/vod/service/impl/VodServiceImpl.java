@@ -5,7 +5,7 @@ import com.aliyun.vod.upload.req.UploadStreamRequest;
 import com.aliyun.vod.upload.resp.UploadStreamResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
-import com.atguigu.commonutils.servicebase.exception.GuliException;
+import com.atguigu.servicebase.exceptionhandler.GuliException;
 import com.atguigu.vod.Utils.InitVodClient;
 import com.atguigu.vod.service.VodService;
 import org.apache.commons.lang.StringUtils;

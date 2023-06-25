@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/eduservice/indexFront")
+@RequestMapping("/eduservice/indexfront")
 @CrossOrigin
 public class IndexFrontController {
     @Autowired
@@ -36,7 +36,7 @@ public class IndexFrontController {
         wrapperteacher.last("limit 4");
         List<EduTeacher> teacherList = teacherService.list(wrapperteacher);
 
-        return R.ok().data("edulist",list).data("teacherList",teacherList);
+        return R.ok().data("eduList",list).data("teacherList",teacherList);
 
     }
 }

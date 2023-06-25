@@ -1,9 +1,9 @@
 package com.atguigu.educms.controller;
 
 
-import com.atguigu.commonutils.R;
 import com.atguigu.educms.entity.CrmBanner;
 import com.atguigu.educms.service.CrmBannerService;
+import com.atguigu.commonutils.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class BannerAdminController {
 
     //分页查询banner
     @GetMapping("pageBanner/{page}/{limit}")
-    public R pageBanner(@PathVariable long page,@PathVariable long limit){
+    public R pageBanner(@PathVariable long page, @PathVariable long limit){
         Page<CrmBanner> pagebanner = new Page<>(page, limit);
         crmBannerService.page(pagebanner,null);
         return R.ok().data("items",pagebanner.getRecords()).data("total",pagebanner.getTotal());

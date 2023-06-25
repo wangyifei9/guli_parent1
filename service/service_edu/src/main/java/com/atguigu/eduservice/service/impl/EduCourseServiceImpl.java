@@ -1,6 +1,5 @@
 package com.atguigu.eduservice.service.impl;
 
-import com.atguigu.commonutils.servicebase.exception.GuliException;
 import com.atguigu.eduservice.entity.EduCourse;
 import com.atguigu.eduservice.entity.EduCourseDescription;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
@@ -10,6 +9,7 @@ import com.atguigu.eduservice.service.EduChapterService;
 import com.atguigu.eduservice.service.EduCourseDescriptionService;
 import com.atguigu.eduservice.service.EduCourseService;
 import com.atguigu.eduservice.service.EduVideoService;
+import com.atguigu.servicebase.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
