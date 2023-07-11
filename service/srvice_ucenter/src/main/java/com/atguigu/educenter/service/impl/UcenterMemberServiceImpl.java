@@ -96,4 +96,13 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
         ucenterMember.setAvatar("beijing.aliyuncs.com/2020/08/05/25f411209c8b44b9b003482b6265c3c9file.png");
         baseMapper.insert(ucenterMember);
     }
+    //根据openid判断
+    @Override
+    public UcenterMember getOpenIdMember(String openid) {
+        QueryWrapper<UcenterMember> wrapper = new QueryWrapper<>();
+        wrapper.eq("openid",openid);
+        UcenterMember ucenterMember = baseMapper.selectOne(wrapper);
+
+        return ucenterMember;
+    }
 }
