@@ -20,6 +20,6 @@ public class ConstantVodUtils implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         ACCESS_KEY_ID = keyid;
         ACCESS_KEY_SECRET = keysecret;
-
     }
+
 }
