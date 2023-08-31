@@ -58,6 +58,7 @@ public class UcenterMemberController {
     @PostMapping("getUserInfoOrder/{id}")
     public UcenterMemberOrder getUserInfoOrder(@PathVariable String id){
         UcenterMember ucenterMember = memberService.getById(id);
+        //把member对象里面值复制给UcenterMemberOrder对象
         UcenterMemberOrder ucenterMemberOrder = new UcenterMemberOrder();
         BeanUtils.copyProperties(ucenterMember,ucenterMemberOrder);
         return ucenterMemberOrder;

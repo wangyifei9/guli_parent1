@@ -12,4 +12,5 @@ public interface UcentClient {
     //根据用户id获取用户信息
     @PostMapping("/educenter/member/getUserInfoOrder/{id}")
     public UcenterMemberOrder getUserInfoOrder(@PathVariable("id") String id);
+
 }
