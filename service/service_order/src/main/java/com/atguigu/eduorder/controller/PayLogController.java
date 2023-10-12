@@ -30,6 +30,7 @@ public class PayLogController {
     public R createNative(@PathVariable String orderNo){
         //返回信息，包含二维码地址，还有其他信息
         Map map = payLogService.createNative(orderNo);
+        System.out.println("----返回二维码map集合"+map);
         return R.ok().data(map);
     }
     //查询订单支付状态
@@ -46,7 +47,7 @@ public class PayLogController {
             payLogService.updateOrdersStatus(map);
             return R.ok().message("支付成功");
         }
-        return R.ok().message("支付中");
+        return R.ok().code(25000).message("支付中");
 
     }
 
